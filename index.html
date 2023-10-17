@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escord Girls</title>
+    <link rel="stylesheet" href="theme.css" />
+    <script src="modernizr-custom.js"></script>
+    <script>
+      fetch("https://escord.fortressdesign.de/theme.css")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json(); // Assuming the response is in JSON format
+        })
+        .then((data) => {
+          // Process the data here
+          console.log(data);
+        })
+        .catch((error) => {
+          console.error("There was a problem with the fetch operation:", error);
+        });
+    </script>
+  </head>
+  <body>
+    <div class="container" id="login">
+      <h1>ESCORD-GIRLS</h1>
+      <h2></h2>
+      <label>Username:</label>
+      <input type="text" name="username" />
+      <label>Passwort:</label>
+      <input type="password" name="password" />
+      <a href="register">Register</a>
+    </div>
+  </body>
+</html>
